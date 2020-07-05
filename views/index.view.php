@@ -6,7 +6,7 @@
 
 ?>
 
-<?php include('inc/header.php')?>
+<?php include('../inc/header.php')?>
     <!--- Start  -->
 <!--- End -->
 
@@ -20,8 +20,8 @@
     </form> -->
 
 
-    <?php include('inc/navbar.php')?>
-    <?php require('inc/main-sidebar-container.php')?>
+    <?php include('../inc/navbar.php')?>
+    <?php require('../inc/main-sidebar-container.php')?>
 
 
 
@@ -36,7 +36,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="index.view.php">Home</a></li>
               <li class="breadcrumb-item active">Starter Page</li>
             </ol>
           </div><!-- /.col -->
@@ -56,12 +56,12 @@
               <div class="inner">
                 <h3>150</h3>
 
-                <p>Compte</p>
+                <p>New Orders</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="comptes.view.php" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -71,12 +71,12 @@
               <div class="inner">
                 <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-                <p>Domaines</p>
+                <p>Bounce Rate</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="domaines.view.php" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -86,12 +86,12 @@
               <div class="inner">
                 <h3>44</h3>
 
-                <p>Inscriptions des utilisateurs</p>
+                <p>User Registrations</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="user.view.php" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -101,12 +101,12 @@
               <div class="inner">
                 <h3>65</h3>
 
-                <p>Alias</p>
+                <p>Unique Visitors</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="alias.view.php" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

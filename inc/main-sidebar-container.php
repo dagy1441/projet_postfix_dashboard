@@ -28,36 +28,39 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
+            <a href="../index.php" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Starter Pages
+                PostFix Dashbord
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
+                <a href="../comptes.view.php" class="nav-link active">
+                  <i class="fas fa-envelope nav-icon"></i>
+                  <p>Comptes</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
+                <a href="../domaines.view.php" class="nav-link">
+                  <i class="fas fa-file nav-icon"></i>
+                  <p>Domaines</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../alias.view.php" class="nav-link">
+                  <i class="fas fa-file nav-icon"></i>
+                  <p>Alias</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../users.view.php" class="nav-link">
+                  <i class="fas fa-users nav-icon"></i>
+                  <p>Users</p>
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
           </li>
         </ul>
       </nav>
