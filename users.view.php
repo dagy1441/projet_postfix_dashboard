@@ -71,40 +71,7 @@
                 <div class="row">
                   <div class="col-lg-12">
                     <div class="table-reponsive" id="showUser">
-                      <table class="table table-bordered table-hover">
-                        <thead>
-                          <tr class="text-center">
-                            <th>ID</th>
-                            <th>Full name</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Password</th>
-                            <th>Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <?php for ($i=0; $i < 100; $i++):?>
-                          <tr class="text-center text-secondary">
-                            <td><?= $i ?></td>
-                            <td>User <?= $i ?></td>
-                            <td>phone <?= $i ?></td>
-                            <td>email <?= $i ?></td>
-                            <td>password <?= $i ?></td>
-                            <td>
-                              <a href="#" class="text-success" title="View Details">
-                                <i class="fas fa-info-circle fa-lg mr-2" aria-hidden="true"></i>
-                              </a>
-                              <a href="#" class="text-primary" title="Edit">
-                                <i class="fas fa-edit fa-lg mr-2" aria-hidden="true"></i>
-                              </a>
-                              <a href="#" class="text-danger" title="Delete">
-                                <i class="fas fa-trash-alt fa-lg" aria-hidden="true"></i>
-                              </a>
-                            </td>
-                          </tr>
-                          <?php endfor;?>
-                        </tbody>
-                      </table>
+                      
                     </div>
                   </div>
                 </div>

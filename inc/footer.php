@@ -2,7 +2,7 @@
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-block">
-      By Ibrahim barrou 
+      By Ibrahim barrou
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy;2020 <a href="../index.php">PostFix_Admin</a>.</strong> All rights reserved.
@@ -18,26 +18,43 @@
     <script src="lib/datatables/datatables-responsive/js/dataTables.responsive.min.js"></script>
     <script src="lib/datatables/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
     <script src="dist/js/script.js"></script>
-    <script>
-    $(function () {
+<script>
+  $(function () {
+
+getAllUsers();
+
+// get All user
+function getAllUsers(){
+  $.ajax({
+    url : "action.php",
+    type : "POST",
+    data : {action: "view"},
+    success : function(response){
+      // console.log(reponse);
+      $("#showUser").html(response);
       $("table").DataTable({
-        "responsive": true,
-        "autoWidth": false,
+        order: [0, 'desc']
       });
-      $("#example1").DataTable({
-        "responsive": true,
-        "autoWidth": false,
-      });
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-    });
+    }
   });
-    </script>
-    
+}
+
+// insert ajax request
+$("insert").click(function (e) {
+    if ($("#form-data")[0].checkValidity()) {
+        e.preventDefault();
+        $.ajax({
+            url: "action.php",
+            type: "POST",
+            data: $("#form-data").serialize()+"&action=insert",
+            success: function (response) {
+                console.log(reponse);
+            }
+        });
+    }
+});
+
+});
+</script>
+
 </body>

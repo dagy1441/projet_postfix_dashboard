@@ -13,10 +13,9 @@
         <div class="modal-body">
           <form action="" method="post" id="form-data">
             <div class="form-group">
-              <input type="text" name="fullname" id="fullname" class="form-control mb-2" placeholder="Fullname" required aria-describedby="helpId">
-              <input type="text" name="phone" id="phone" class="form-control mb-2" placeholder="phone" required aria-describedby="helpId">
               <input type="email" name="email" id="email" class="form-control mb-2" placeholder="email" required aria-describedby="helpId">
               <input type="password" name="password" id="password" class="form-control" placeholder="password" required aria-describedby="helpId">
+              <input type="text" name="etat" id="etat" class="form-control mb-2" placeholder="etat" required aria-describedby="helpId">
               <!-- <input type="text" name="etat" id="etat" class="form-control" placeholder="etat" required aria-describedby="helpId"> -->
             </div>
             <div class="form-group">
