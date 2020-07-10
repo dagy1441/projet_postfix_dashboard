@@ -12,6 +12,7 @@ if (isset($_POST['action']) && $_POST['action'] == "view") {
         <thead>
           <tr class="text-center">
             <th>ID</th>
+            <th>Username</th>
             <th>Email</th>
             <th>Etat</th>
             <th>Action</th>
@@ -22,18 +23,24 @@ if (isset($_POST['action']) && $_POST['action'] == "view") {
             $output .= '
             <tr class="text-center text-secondary">
             <td>' . $row['id'] . '</td>
+            <td>' . $row['name'] . '</td>
             <td>' . $row['email'] . '</td>
             <td>' . $row['state'] . '</td>
             <td>
-            <a href="#" class="text-success" title="View Details">
+
+            <a href="#" id="'.$row['id'].'" class="text-success infoBtn" title="View Details">
               <i class="fas fa-info-circle fa-lg mr-2" aria-hidden="true"></i>
             </a>
-            <a href="#" class="text-primary" title="Edit">
+
+            <a href="#" id="'.$row['id'].'" class="text-primary editBtn" title="Edit"
+               data-toggle="modal" data-target="#editModal">
               <i class="fas fa-edit fa-lg mr-2" aria-hidden="true"></i>
             </a>
-            <a href="#" class="text-danger" title="Delete">
+
+            <a href="#" id="'.$row['id'].'" class="text-danger delBtn" title="Delete">
               <i class="fas fa-trash-alt fa-lg" aria-hidden="true"></i>
             </a>
+
           </td>
         </tr>
             ';
@@ -50,9 +57,33 @@ if (isset($_POST['action']) && $_POST['action'] == "view") {
 }
 
 if (isset($_POST['action']) && $_POST['action'] == "insert") {
-    $email = $_POST['email'];
+    $name     = $_POST['name'];
+    $email    = $_POST['email'];
     $password = $_POST['password'];
-    $state = $_POST['state'];
+    $state    = $_POST['state'];
 
-    $db->insert($email, $password, $state);
+    $db->insert($name,$email, $password, $state);
+}
+
+if (isset($_POST['edit_id'])) {
+  $id = $_POST['edit_id'];
+
+  $row = $db->getUserById($id);
+  echo json_encode($row);
+}
+
+
+if (isset($_POST['action']) && $_POST['action'] == "update"){
+  $id= $_POST['id'];
+  $email= $_POST['email'];
+  $password= $_POST['password'];
+  $state= $_POST['state'];
+
+  $db->update($id, $email, $password, $state);
+}
+
+if (isset($_POST['del_id'])){
+  $id= $_POST['del_id'];
+
+  $db->delete($id);
 }

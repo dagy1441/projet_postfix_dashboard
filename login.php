@@ -3,7 +3,7 @@ if (isset($_POST['submit'])) {
     # start the session
     session_start();
     // session params
-    $_SESSION['name'] = htmlentities($_POST['name']);
+    // $_SESSION['name'] = htmlentities($_POST['name']);
     $_SESSION['email'] = htmlentities($_POST['email']);
     $_SESSION['password'] = htmlentities($_POST['password']);
 

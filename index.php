@@ -91,7 +91,7 @@
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="user.view.php" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="users.view.php" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

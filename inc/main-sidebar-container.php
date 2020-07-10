@@ -1,7 +1,6 @@
 <?php 
     session_start();
-    
-    $name = $_SESSION['name']; 
+    // $name = $_SESSION['name']; 
     $email = $_SESSION['email']; 
 
 ?>
@@ -18,7 +17,7 @@
           <img src="../dist/img/client1.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"><?php echo $name;?></a>
+          <a href="#" class="d-block"><?php echo $email;?></a>
         </div>
       </div>
 

@@ -5,42 +5,29 @@
     // private  $dbUsername = 'root';
     // private  $dbUserPassword = 'root';
 
-    private $dsn = "mysql:host=localhost;dbname=db_postfix";
+    // php -S localhost:8000 -d error_reporting=E_All
+
+    private $host = "mysql:host=localhost;dbname=db_postfix";
     private $user = "root";
     private $password = "root";
     private  $conn;
 
     public function __construct() {
       try{
-        $this->conn = new PDO($this->dsn,$this->user,$this->password);
+        $this->conn = new PDO($this->host,$this->user,$this->password);
       }catch(PDOException $e){
           die($e->getMessage());
         }
     }
 
-    // public static function connect() {
-    // // Autoriser une seule connexion pour toute la durée de l’accès
-    //   if ( null == self::$conn ){
-    //     try{
-    //     self::$conn = new PDO( "mysql:host=".self::$dbHost.";"."dbname=".self::$dbName, self::$dbUsername, self::$dbUserPassword);
-    //     }catch(PDOException $e){
-    //       die($e->getMessage());
-    //     }
-    //   } 
-    //   return self::$conn;
-    // }
-
-    // public static function disconnect(){
-    //     self::$conn = null;
-    // }
-
     // fonction d'ajout
-    public function insert($email, $password, $state){
-        $req = "INSERT INTO user(email, password, state)
-                VALUES(:email, :password, :state)"; 
-        $stmt = $this->conn->prepare(req);
+    public function insert($name,$email, $password, $state){
+        $req = "INSERT INTO user (name,email, password, state)
+                VALUES (:name, :email, :password, :state)"; 
+        $stmt = $this->conn->prepare($req);
         $stmt->execute(
             [
+             'name'    => $name,
              'email'    => $email,
              'password' => $password,
              'state'    => $state,
@@ -62,7 +49,7 @@
     }
 
     public function getUserById($id){
-      $req = "SELECT * FROM user WHERE id = :id";
+      $req = "SELECT * FROM user WHERE id=:id";
       $stmt = $this->conn->prepare($req);
       $stmt->execute(['id' => $id]);
       $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -70,11 +57,12 @@
     }
 
     public function update($id, $email, $password,$state){
-      $req = "UPDATE user SET email = :email, password = :password, state = :state
+      $req = "UPDATE user SET name = :name,email = :email, password = :password, state = :state
                WHERE id = :id";
       $stmt = $this->conn->prepare($req);
       $stmt->execute(
         [
+         'name'=>$name,
          'email'=>$email,
          'password'=>$password,
          'state'=>$state,
