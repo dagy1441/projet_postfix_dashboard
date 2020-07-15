@@ -76,6 +76,7 @@ $("body").on("click", ".editBtn", function(e){
       console.log(response);
       data = JSON.parse(response);
       $("#id").val(data.id);
+      $("#name").val(data.name);
       $("#email").val(data.email);
       $("#password").val(data.password);
       $("#state").val(data.state);

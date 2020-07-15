@@ -4,6 +4,38 @@
     $name = $_SESSION['name']; 
     $email = $_SESSION['email']; 
 
+
+    if(isset($_POST["login"]))  
+    {  
+         if(empty($_POST["username"]) || empty($_POST["password"]))  
+         {  
+              $message = 'All fields are required';  
+         }  
+         else  
+         {  
+              $query = "SELECT * FROM user WHERE name = :name AND password = :password";  
+             
+              $statement = $connect->prepare($query);  
+              $statement->execute(  
+                   array(  
+                        'name'      =>     $_POST["name"],  
+                        'password'  =>     $_POST["password"]  
+                   )  
+              );  
+              $count = $statement->rowCount();  
+              if($count > 0)  
+              {  
+                   $_SESSION["name"] = $_POST["name"];  
+                   header("location:index.php");  
+              }  
+              else  
+              {  
+                   $message = 'Wrong Data';  
+              }  
+         }  
+    }  
+
+
 ?>
 
 <!DOCTYPE html>

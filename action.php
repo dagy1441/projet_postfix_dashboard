@@ -75,11 +75,12 @@ if (isset($_POST['edit_id'])) {
 
 if (isset($_POST['action']) && $_POST['action'] == "update"){
   $id= $_POST['id'];
+  $name= $_POST['name'];
   $email= $_POST['email'];
   $password= $_POST['password'];
   $state= $_POST['state'];
 
-  $db->update($id, $email, $password, $state);
+  $db->update($id, $name, $email, $password, $state);
 }
 
 if (isset($_POST['del_id'])){
